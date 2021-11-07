@@ -500,6 +500,73 @@ header {
   margin-left: 10px;
 }
 
+/* Форма в Футере */
+
+.footer-form-subscribe {
+  margin-left: 93px;
+}
+
+.subscribe-footer-section {
+  display: flex;
+  flex-direction: row;
+}
+.form-subscribe {
+  /* display: flex;
+  flex-direction: row; */
+}
+
+.form-footer {
+  margin-right: 12px;
+}
+
+.form-footer-head {
+  margin-bottom: 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 00.03em;
+  color: var(--primary-white-color);
+  text-transform: uppercase;
+}
+
+.form-footer input {
+  width: 100%;
+  height: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background-color: inherit;
+}
+
+.subscribe-btn {
+  position: absolute;
+  display: flex;
+
+  align-items: center;
+  min-width: 200px;
+  height: 50px;
+  padding: 10px 32px;
+  border-radius: 4px;
+  border-color: transparent;
+  background-color: var(--logo-accent-color);
+  color: var(--primary-white-color);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.06;
+  line-height: 1.88;
+}
+
+.form-footer-icon {
+  position: relative;
+  margin-left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+}
+
 /* оформление index.html */
 
 /* Backdrop */
@@ -550,7 +617,7 @@ header {
 }
 
 .close-icon {
-  fill: #000000;
+  fill: currentColor;
 
   display: block;
   align-items: center;
@@ -574,6 +641,13 @@ header {
   background-color: #fff;
   align-items: center;
   justify-content: center;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-close:hover,
+.button-close:focus {
+  color: var(--logo-accent-color);
 }
 
 .modal-header {
@@ -584,6 +658,7 @@ header {
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
+  letter-spacing: 0.03em;
   color: var(--title-text-color);
 }
 
@@ -594,22 +669,28 @@ header {
 }
 
 .form-field {
-  position: relative;
   display: flex;
   flex-direction: column;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-field input {
+  width: 100%;
   padding: 12px;
   padding-left: 42px;
-  margin-bottom: 10px;
+  margin-top: 4px;
 
   border-width: 1px;
   border-color: rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-wrapper {
+  position: relative;
+  margin-bottom: 10px;
+  display: block;
 }
 
 .checkbox-agreement input {
@@ -627,27 +708,21 @@ header {
   margin-top: 20px;
 }
 
-.form-field:hover .modal-icon,
-.form-field:focus .modal-icon {
+.modal-form-input:focus ~ .modal-icon {
   fill: var(--logo-accent-color);
 }
 
-.form-field input:hover,
-.comment:hover,
 .form-field input:focus,
 .comment:focus {
   border-color: var(--logo-accent-color);
-}
-
-.form-field input:focus {
   outline: none;
-  border-color: var(--logo-accent-color);
 }
 
 .modal-icon {
   position: absolute;
-  top: 29px;
   left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
 
   color: currentColor;
 
@@ -664,6 +739,7 @@ header {
 }
 
 .form-field textarea {
+  margin-top: 4px;
   border-width: 1px;
   border-color: rgba(33, 33, 33, 0.2);
   border-radius: 4px;
@@ -681,12 +757,14 @@ header {
   line-height: 1.17;
   font-weight: 400;
   color: var(--primary-text-color);
-
-  padding-bottom: 4px;
 }
 
 .text-comment {
   padding: 12px 16px;
+}
+
+.text-comment::placeholder {
+  color: rgba(117, 117, 117, 0.5);
 }
 
 .agreement-text::before {
@@ -729,11 +807,14 @@ header {
   font-weight: 400;
   letter-spacing: 0.03em;
   justify-content: center;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .checkbox-agreement {
   display: flex;
   align-items: center;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .agreement {
