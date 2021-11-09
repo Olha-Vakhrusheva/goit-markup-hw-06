@@ -602,6 +602,11 @@ header {
   top: 50%;
   left: 50%;
 
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 41px;
+  padding-right: 39px;
+
   transform: translate(-50%, -50%) scale(1);
 
   width: 528px;
@@ -658,8 +663,7 @@ header {
 }
 
 .modal-header {
-  padding-top: 40px;
-  padding-bottom: 12px;
+  margin-bottom: 12px;
 
   text-align: center;
   font-weight: 700;
@@ -675,13 +679,24 @@ header {
   margin-right: auto;
 }
 
-.form-field {
+.modal-form-label {
   display: flex;
   flex-direction: column;
+
+  margin-bottom: 10px;
+
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-field input {
+.modal-form-label {
+  font-size: 12px;
+  line-height: 1.17;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: var(--primary-text-color);
+}
+
+.modal-form-input {
   width: 100%;
   padding: 12px;
   padding-left: 42px;
@@ -695,11 +710,10 @@ header {
 
 .modal-form-wrapper {
   position: relative;
-  margin-bottom: 10px;
   display: block;
 }
 
-.checkbox-agreement input {
+.checkbox {
   width: 16px;
   height: 15px;
 
@@ -710,15 +724,11 @@ header {
   margin-left: 12px;
 }
 
-.checkbox-agreement {
-  margin-top: 20px;
-}
-
 .modal-form-input:focus ~ .modal-icon {
   fill: var(--logo-accent-color);
 }
 
-.form-field input:focus,
+.modal-form-input:focus,
 .comment:focus {
   border-color: var(--logo-accent-color);
   outline: none;
@@ -745,7 +755,7 @@ header {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-field textarea {
+form textarea {
   margin-top: 4px;
   border-width: 1px;
   border-color: rgba(33, 33, 33, 0.2);
@@ -754,17 +764,9 @@ header {
   height: 120px;
 }
 
-.form-field textarea:focus {
+form textarea:focus {
   outline: none;
   border-color: var(--logo-accent-color);
-}
-
-.form-field label {
-  font-size: 12px;
-  line-height: 1.17;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  color: var(--primary-text-color);
 }
 
 .text-comment {
